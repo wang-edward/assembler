@@ -8,26 +8,18 @@ $ ./init.sh                                 # build code
 $ ./build/assembler tests/Add.asm           # run executable
 $ cat tests/Add.hack                        # show results
 $ diff tests/Add.hack tests/sols/Add.hack   # compare results with solutions from book
+
+$ ./build/assembler tests/PongL.asm         # huge example (27k lines)
 ```
 
-##### Add.asm
+### Add.asm -> Add.hack
 ```
-@2
-D=A
-@3
-D=D+A
-@0
-M=D
-```
-
-##### Add.hack
-```
-0000000000000010
-1110110000010000
-0000000000000011
-1110000010010000
-0000000000000000
-1110001100001000
+@2      0000000000000010
+D=A     1110110000010000
+@3      0000000000000011 
+D=D+A   1110000010010000
+@0      0000000000000000
+M=D     1110001100001000
 ```
 
 ## Specification
