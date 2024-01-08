@@ -10,3 +10,7 @@ $ ./build/assembler tests/Add.asm           # run executable
 $ cat tests/Add.hack                        # show results
 $ diff tests/Add.hack tests/sols/Add.hack   # compare results with solutions from book
 ```
+
+## Specification
+![Hack Specification](images/spec.png)
+![Example](images/example.png)
