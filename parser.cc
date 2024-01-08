@@ -97,6 +97,9 @@ std::string Parser:: getSymbol() const {
             // remove front and back parentheses
             return curr_line.substr(1, curr_line.size() - 2); 
         break;
+        default:
+            throw std::runtime_error{"invalid value to enum InstructionValue."};
+        break;
     }
 }
 
