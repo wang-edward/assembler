@@ -15,6 +15,7 @@ $ ./build/assembler tests/PongL.asm         # huge example (27k lines)
 ### Add.asm -> Add.hack
 ```
 Add.asm     |       Add.hack
+------------------------------------
 @2          |       0000000000000010
 D=A         |       1110110000010000
 @3          |       0000000000000011 
