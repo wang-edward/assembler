@@ -10,7 +10,7 @@ $ cat tests/Add.hack                        # show results
 $ diff tests/Add.hack tests/sols/Add.hack   # compare results with solutions from book
 ```
 
-### Add.asm
+##### Add.asm
 ```
 @2
 D=A
@@ -20,7 +20,7 @@ D=D+A
 M=D
 ```
 
-### Add.hack
+##### Add.hack
 ```
 0000000000000010
 1110110000010000
