@@ -2,6 +2,8 @@
 
 Assembler that translates programs written in Hack assembly language into Hack binary code.
 
+Project from the book [nand2tetris](https://www.nand2tetris.org/).
+
 ## Usage
 ```bash
 $ ./init.sh                                     # build code
