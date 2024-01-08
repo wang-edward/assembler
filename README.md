@@ -9,7 +9,7 @@ $ ./build/assembler tests/Add.asm           # run executable
 $ cat tests/Add.hack                        # show results
 $ diff tests/Add.hack tests/sols/Add.hack   # compare results with solutions from book
 
-$ ./build/assembler tests/PongL.asm         # huge example (27k lines)
+$ ./build/assembler tests/PongL.asm         # huge example (27k lines of assembly)
 ```
 
 ### Add.asm -> Add.hack
