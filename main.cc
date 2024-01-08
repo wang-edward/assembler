@@ -13,19 +13,22 @@ std::string make_string(const char *s) {
 }
 
 int main(int argc, char **argv) {
+    // make sure input is correct
     if (argc != 2) {
-        std::cerr << "takes 1 argument: filename." << std::endl;
+        std::cerr << "takes 1 argument: filename.asm" << std::endl;
         exit(1);
     }
 
     Parser parser{argv[1]};
     Code code;
     std::ofstream fout{generate_filepath(argv[1])};
+
     try {
         parser.parse(fout, code);
     } catch (std::exception &e) {
         std::cerr << e.what() << std::endl;
         exit(1);
     }
+
     fout.close();
 }

@@ -3,6 +3,7 @@
 
 Parser:: Parser(std::string filename)
     : file{filename}, space_regex{"\\s+"}, curr_address{Parser::START_ADDRESS} {
+    // default values for lookup table
     lut = {
         {"R0",     0x00},
         {"R1",     0x01},
@@ -38,9 +39,8 @@ void Parser:: advance() {
 	std::string temp;
     getline(file, temp);
 
-    // remove spaces
+    // remove whitespace and comments
     temp = regex_replace(temp, space_regex, "");
-    // remove comments (if they exist)
     size_t comment_index = temp.find("//");
     if (comment_index != std::string::npos) {
         temp = temp.substr(0, comment_index);
@@ -153,19 +153,22 @@ void Parser:: parse(std::ofstream &fout, const Code &code) {
                 fout << code.convertJump(getJump()) << std::endl;
                 break;
             case InstructionType::A_INSTRUCTION: {
-                // int address = getSymbol();
                 std::string label = getSymbol();
 
+                // generate address from label
                 uint16_t numeral = -1;
+                // if the address is numerical
                 if (isNumeric(label)) {
                     numeral = stoi(label);
                 } else {
+                    // if the address is symbolic
                     if (lut.find(label) == lut.end()) {
                         lut[label] = curr_address;
                         curr_address++;
                     }
                     numeral = lut.at(label);
                 }
+                // write binary representation of address
                 std::string binary = std::bitset<16>(numeral).to_string();
                 fout << binary << std::endl;
                 break;
@@ -203,6 +206,7 @@ InstructionType parseInstruction(const std::string &s) {
 	}
 }
 
+// check if a string is numeric i.e. "12345"
 bool isNumeric(std::string s) {
     auto it = s.begin();
     while (it != s.end() && std::isdigit(*it)) ++it;

@@ -6,7 +6,6 @@
 
 #include "code.hh"
 
-
 enum InstructionType {
 	C_INSTRUCTION,
 	A_INSTRUCTION,

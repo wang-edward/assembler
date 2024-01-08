@@ -13,6 +13,9 @@ std::string Code:: convertJump(const std::string &s) const {
 }
 
 Code:: Code() {
+    
+    // initialize conversion maps
+
     // map_dest
     map_dest = { 
         {"",    "000"},
@@ -72,6 +75,7 @@ Code:: Code() {
     };
 }
 
+// convert a symbol to it's binary representation
 std::string convert(const std::unordered_map<std::string, std::string> &m, const std::string &s) {
     auto it = m.find(s);
     if (it != m.end()) {
