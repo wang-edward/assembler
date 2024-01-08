@@ -27,5 +27,7 @@ M=D         |       1110001100001000
 
 ## Specification
 ![Hack Specification](images/spec.png)
+## Example
 ![Example](images/example.png)
+## Hack CPU Architecture
 ![Architecture](images/architecture.png)
