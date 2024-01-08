@@ -4,12 +4,13 @@ Assembler that translates programs written in Hack assembly language into Hack b
 
 ## Usage
 ```bash
-$ ./init.sh                                 # build code
-$ ./build/assembler tests/Add.asm           # run executable
-$ cat tests/Add.hack                        # show results
-$ diff tests/Add.hack tests/sols/Add.hack   # compare results with solutions from book
+$ ./init.sh                                     # build code
+$ ./build/assembler tests/Add.asm               # run executable
+$ cat tests/Add.hack                            # show results
+$ diff tests/Add.hack tests/sols/Add.hack       # compare results with solutions from book
 
-$ ./build/assembler tests/PongL.asm         # huge example (27k lines of assembly)
+$ ./build/assembler tests/PongL.asm             # huge example (27k lines of assembly)
+$ diff tests/PongL.hack tests/sols/PongL.hack   # compare again
 ```
 
 ### Add.asm -> Add.hack
