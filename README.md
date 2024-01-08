@@ -27,3 +27,4 @@ M=D         |       1110001100001000
 ## Specification
 ![Hack Specification](images/spec.png)
 ![Example](images/example.png)
+![Architecture](images/architecture.png)
